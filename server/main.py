@@ -56,7 +56,8 @@ def getWiki():
 	data = json.loads(req)
 	try:
 		result = wikipedia.summary(data['keywords'])
-		return json.dumps({'result':result, 'success': True})
+		url = wikipedia.page(data['keywords']).url
+		return json.dumps({'result':result, 'url':url, 'success': True})
 	except Exception, e:
 		return json.dumps({'success': False})
 

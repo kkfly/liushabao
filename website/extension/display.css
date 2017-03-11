@@ -1,3 +1,15 @@
 .marker {
 	color : red;
 }
+
+.tooltip-inner {
+	text-overflow: ellipsis;
+  	overflow: hidden;
+  	display: -webkit-box;
+  	-webkit-box-orient: vertical;
+  	-webkit-line-clamp: 10;
+}
+
+.marker-active {
+	text-decoration:underline;
+}
