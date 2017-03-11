@@ -1,0 +1,31 @@
+/* line 1, ../sass/nav.scss */
+#header {
+  margin-top: 20px;
+}
+
+/* line 6, ../sass/nav.scss */
+.nav li {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 150px;
+}
+/* line 13, ../sass/nav.scss */
+.nav .active {
+  background-color: #535559;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* line 20, ../sass/nav.scss */
+#username {
+  float: right;
+  margin-right: 100px;
+}
+
+/* line 25, ../sass/nav.scss */
+.over {
+  background-color: #F6F6F6;
+  border-radius: 5px;
+}

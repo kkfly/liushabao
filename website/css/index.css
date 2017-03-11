@@ -3,36 +3,6 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 /* line 7, ../sass/index.scss */
-#hotnews {
-  float: left;
-}
-
-/* line 11, ../sass/index.scss */
-#recommendation {
-  float: left;
-}
-
-/* line 15, ../sass/index.scss */
-#header {
-  margin-top: 20px;
-}
-
-/* line 20, ../sass/index.scss */
-.nav li {
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-left: 150px;
-}
-/* line 27, ../sass/index.scss */
-.nav .active {
-  background-color: #535559;
-  color: #fff;
-  border-radius: 5px;
-}
-
-/* line 34, ../sass/index.scss */
 #welcome {
   margin-top: 20px;
   width: 100%;
@@ -44,7 +14,7 @@
   font-size: 50px;
 }
 
-/* line 45, ../sass/index.scss */
+/* line 18, ../sass/index.scss */
 .news-icon-wrapper {
   height: 320px;
   margin-left: 50px;
@@ -52,18 +22,18 @@
   width: 25%;
 }
 
-/* line 52, ../sass/index.scss */
+/* line 25, ../sass/index.scss */
 .news-icon {
   width: 100%;
   height: 220px;
 }
 
-/* line 57, ../sass/index.scss */
+/* line 30, ../sass/index.scss */
 .gray {
   -webkit-filter: grayscale(100%);
 }
 
-/* line 61, ../sass/index.scss */
+/* line 34, ../sass/index.scss */
 .news-title {
   text-overflow: ellipsis;
   font-size: 20px;
@@ -74,22 +44,22 @@
   -webkit-line-clamp: 2;
 }
 
-/* line 71, ../sass/index.scss */
+/* line 44, ../sass/index.scss */
 #news {
   margin-top: 100px;
   margin-left: 110px;
   height: 100%;
   line-height: 1;
 }
-/* line 76, ../sass/index.scss */
+/* line 49, ../sass/index.scss */
 #news .first {
   float: left;
 }
-/* line 80, ../sass/index.scss */
+/* line 53, ../sass/index.scss */
 #news .second {
   float: left;
 }
-/* line 83, ../sass/index.scss */
+/* line 56, ../sass/index.scss */
 #news .third {
   float: left;
 }

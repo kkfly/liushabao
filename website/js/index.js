@@ -1,4 +1,5 @@
 $(function() {
+
 	function inflateNews(data) {
 		var $newsDiv = $('#news')
 		var newsTpl = Handlebars.compile($('#news-icon-template').html())
