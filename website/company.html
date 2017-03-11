@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<title>Analysis of Companies and Leaders</title>
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/multilevelmenu.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css" />
+		<script src="js/modernizr.custom.js"></script>
+		<link rel="stylesheet" href="http://dreamsky.github.io/main/blog/common/init.css">
+		<script src="http://dreamsky.github.io/main/blog/common/jquery.min.js"></script>	
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/nav.js"></script>
+		<script src="js/echarts.js"></script>
+    	<script src="js/dataTool.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/nav.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/company.css"></link>
+	</head>
+	<body>	
+		<div id="header">
+		<ul class="nav nav-pills">
+  			<li id="home">Home</li>
+  			<li id="rec">Recommendation</li>
+  			<li id="analysis" class="active">Analysis</li>
+  			<li id="username">lalala</li>
+		</ul>
+		</div>
+		
+
+		<div id="pt-main" class="pt-perspective" style="margin-top:50px">
+			<div class="pt-page pt-page-1">
+				<img class="right-button" id="iterateEffects" src="/others/right.png"/>
+				<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    			<div id="main-company" style="height:600px;width:800px;margin:0 auto"></div>
+			</div>
+			<div class="pt-page pt-page-2">
+				<img class="left-button" id="iterateEffects-left" src="/others/left.png"/>
+				<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    			<div id="main-leader" style="height:600px;width:800px;margin:0 auto"></div>
+			</div>
+		</div>
+		
+		<div class="pt-message">
+			<p>亲，你的浏览器不支持 CSS 动画，请使用 Chrome,Firefox,Safari 等浏览器浏览.</p>
+		</div>
+		<script src="js/jquery.dlmenu.js"></script>
+		<script src="js/pagetransitions.js"></script>
+		<script type="text/javascript">
+        	var myChart = echarts.init(document.getElementById('main-company'));
+        	myChart.showLoading();
+			$.get('/others/les-miserables.gexf', function (xml) {
+    			myChart.hideLoading();
+
+    			var graph = echarts.dataTool.gexf.parse(xml);
+    			var categories = [];
+    			for (var i = 0; i < 9; i++) {
+        			categories[i] = {
+            		name: '类目' + i
+        			};
+    			}
+    		graph.nodes.forEach(function (node) {
+        		node.itemStyle = null;
+        		node.value = node.symbolSize;
+        		node.symbolSize /= 1.5;
+        		node.label = {
+            	normal: {
+                	show: node.symbolSize > 20
+            	}
+        	};
+        	node.category = node.attributes.modularity_class;
+    		});
+    		option = {
+        		title: {
+            		text: 'NetWork of Companies',
+            		top: 'top',
+            		left: 'center'
+        		},
+        		tooltip: {},
+        		legend: [{
+            		// selectedMode: 'single',
+            		show:false,
+            		data: categories.map(function (a) {
+
+                	return a.name;
+            		})
+        		}],
+        		animationDuration: 1500,
+        		animationEasingUpdate: 'quinticInOut',
+        		series : [
+            		{
+                		name: 'Les Miserables',
+                		type: 'graph',
+                		layout: 'none',
+                		data: graph.nodes,
+                		links: graph.links,
+                		categories: categories,
+                		roam: true,
+                		label: {
+                    		normal: {
+                        		position: 'right',
+                        		formatter: '{b}'
+                    		}
+                		},
+                		lineStyle: {
+                    		normal: {
+                        		color: 'source',
+                        		curveness: 0.3
+                    		}
+                		}
+            		}
+        		]
+    		};
+
+    myChart.setOption(option);
+}, 'xml');
+        </script>
+        <script type="text/javascript">
+        	var myChart_leader = echarts.init(document.getElementById('main-leader'));
+        	myChart_leader.showLoading();
+			$.get('/others/les-miserables.gexf', function (xml) {
+    			myChart_leader.hideLoading();
+
+    			var graph = echarts.dataTool.gexf.parse(xml);
+    			var categories = [];
+    			for (var i = 0; i < 9; i++) {
+        			categories[i] = {
+            		name: '类目' + i
+        			};
+    			}
+    		graph.nodes.forEach(function (node) {
+        		node.itemStyle = null;
+        		node.value = node.symbolSize;
+        		node.symbolSize /= 1.5;
+        		node.label = {
+            	normal: {
+                	show: node.symbolSize > 20
+            	}
+        	};
+        	node.category = node.attributes.modularity_class;
+    		});
+    		option = {
+        		title: {
+            		text: 'NetWork of Leaders',
+            		top: 'top',
+            		left: 'center'
+        		},
+        		tooltip: {},
+        		legend: [{
+            		// selectedMode: 'single',
+            		show:false,
+            		data: categories.map(function (a) {
+
+                	return a.name;
+            		})
+        		}],
+        		animationDuration: 1500,
+        		animationEasingUpdate: 'quinticInOut',
+        		series : [
+            		{
+                		name: 'Les Miserables',
+                		type: 'graph',
+                		layout: 'none',
+                		data: graph.nodes,
+                		links: graph.links,
+                		categories: categories,
+                		roam: true,
+                		label: {
+                    		normal: {
+                        		position: 'right',
+                        		formatter: '{b}'
+                    		}
+                		},
+                		lineStyle: {
+                    		normal: {
+                        		color: 'source',
+                        		curveness: 0.3
+                    		}
+                		}
+            		}
+        		]
+    		};
+
+    myChart_leader.setOption(option);
+}, 'xml');
+        </script>
+
+	</body>
+</html>

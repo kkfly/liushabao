@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<title>Analysis of Companies and Leaders</title>
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/multilevelmenu.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css" />
+		<script src="js/modernizr.custom.js"></script>
+		<link rel="stylesheet" href="http://dreamsky.github.io/main/blog/common/init.css">
+		<script src="http://dreamsky.github.io/main/blog/common/jquery.min.js"></script>	
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/nav.js"></script>
+		<script type="text/javascript" src="js/d3.js"></script>
+		<script src="js/echarts.js"></script>
+    	<script src="js/dataTool.min.js"></script>
+    	<script src="https://www.jasondavies.com/wordcloud/cloud.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/nav.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/technology.css"></link>
+		<script>
+			$(document).ready(function(){
+  			$("#2016").click(function(){
+  				$("#word-cloud-2016").fadeOut("slow");
+  				$("#word-cloud-2015").fadeOut("slow");
+  				$("#word-cloud-2014").fadeOut("slow");
+  				$("#word-cloud-2013").fadeOut("slow");
+  				$("#word-cloud-2012").fadeOut("slow");
+  				$("#word-cloud-2011").fadeOut("slow");
+    			$("#word-cloud-2016").fadeIn("slow");
+    			console.log("hahahah")
+  			});
+  			$("#2015").click(function(){
+  				$("#word-cloud-2016").fadeOut("slow");
+  				$("#word-cloud-2015").fadeOut("slow");
+  				$("#word-cloud-2014").fadeOut("slow");
+  				$("#word-cloud-2013").fadeOut("slow");
+  				$("#word-cloud-2012").fadeOut("slow");
+  				$("#word-cloud-2011").fadeOut("slow");
+    			$("#word-cloud-2015").fadeIn("slow");
+    			console.log("hahahah")
+  			});
+  			$("#2014").click(function(){
+  				$("#word-cloud-2016").fadeOut("slow");
+  				$("#word-cloud-2015").fadeOut("slow");
+  				$("#word-cloud-2014").fadeOut("slow");
+  				$("#word-cloud-2013").fadeOut("slow");
+  				$("#word-cloud-2012").fadeOut("slow");
+  				$("#word-cloud-2011").fadeOut("slow");
+    			$("#word-cloud-2014").fadeIn("slow");
+    			console.log("hahahah")
+  			});
+  			$("#2013").click(function(){
+  				$("#word-cloud-2016").fadeOut("slow");
+  				$("#word-cloud-2015").fadeOut("slow");
+  				$("#word-cloud-2014").fadeOut("slow");
+  				$("#word-cloud-2013").fadeOut("slow");
+  				$("#word-cloud-2012").fadeOut("slow");
+  				$("#word-cloud-2011").fadeOut("slow");
+    			$("#word-cloud-2013").fadeIn("slow");
+    			console.log("hahahah")
+  			});
+  			$("#2012").click(function(){
+  				$("#word-cloud-2016").fadeOut("slow");
+  				$("#word-cloud-2015").fadeOut("slow");
+  				$("#word-cloud-2014").fadeOut("slow");
+  				$("#word-cloud-2013").fadeOut("slow");
+  				$("#word-cloud-2012").fadeOut("slow");
+  				$("#word-cloud-2011").fadeOut("slow");
+    			$("#word-cloud-2012").fadeIn("slow");
+    			console.log("hahahah")
+  			});
+  			$("#2011").click(function(){
+  				$("#word-cloud-2016").fadeOut("slow");
+  				$("#word-cloud-2015").fadeOut("slow");
+  				$("#word-cloud-2014").fadeOut("slow");
+  				$("#word-cloud-2013").fadeOut("slow");
+  				$("#word-cloud-2012").fadeOut("slow");
+  				$("#word-cloud-2011").fadeOut("slow");
+    			$("#word-cloud-2011").fadeIn("slow");
+    			console.log("hahahah")
+  			});
+			});
+		</script>
+	</head>
+	<body>	
+		<div id="header">
+		<ul class="nav nav-pills">
+  			<li id="home">Home</li>
+  			<li id="rec">Recommendation</li>
+  			<li id="analysis" class="active">Analysis</li>
+  			<li id="username">lalala</li>
+		</ul>
+		</div>
+		
+
+		<div id="pt-main" class="pt-perspective" style="margin-top:50px">
+			<div class="pt-page pt-page-1" >
+				<!-- Small button group -->
+				<div style="position:absolute;left: 100px;">
+				hot technology word of 
+				<div class="btn-group" >
+
+  					<button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    				2016 <span class="caret"></span>
+  					</button>
+  					<ul class="dropdown-menu">
+  						<li id="2016">2016</li>
+    					<li id="2015">2015</li>
+    					<li id="2014">2014</li>
+    					<li id="2013">2013</li>
+    					<li id="2012">2012</li>
+    					<li id="2011">2011</li>
+  					</ul>
+				</div>
+			</div>
+			<img class="word-cloud" id="word-cloud-2016" src="/others/word-cloud-2016.png"/>
+			<img class="word-cloud" id="word-cloud-2015" src="/others/word-cloud-2015.png" style="display:none;"/>
+			<img class="word-cloud" id="word-cloud-2014" src="/others/word-cloud-2014.png" style="display:none;"/>
+			<img class="word-cloud" id="word-cloud-2013" src="/others/word-cloud-2013.png" style="display:none;"/>
+			<img class="word-cloud" id="word-cloud-2012" src="/others/word-cloud-2012.png" style="display:none;"/>
+			<img class="word-cloud" id="word-cloud-2011" src="/others/word-cloud-2011.png" style="display:none;"/>
+				<img class="right-button" id="iterateEffects" src="/others/right.png"/>
+			</div>
+			<div class="pt-page pt-page-2">
+				<img class="left-button" id="iterateEffects-left" src="/others/left.png"/>
+				<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    			<div id="main-technology" style="height:600px;width:1000px;margin:0 auto"></div>
+			</div>
+		</div>
+		
+		<div class="pt-message">
+			<p>亲，你的浏览器不支持 CSS 动画，请使用 Chrome,Firefox,Safari 等浏览器浏览.</p>
+		</div>
+		<script src="js/jquery.dlmenu.js"></script>
+		<script src="js/pagetransitions.js"></script>
+        <script type="text/javascript">
+        	var myChart = echarts.init(document.getElementById('main-technology'));
+        	var xAxisData = [];
+			var data1 = [];
+			var data2 = [];
+			var data3 = [];
+			var data4 = [];
+
+			for (var i = 0; i < 10; i++) {
+    			xAxisData.push('Class' + i);
+    			data1.push((Math.random() * 2).toFixed(2));
+    			data2.push(-Math.random().toFixed(2));
+    			data3.push((Math.random() * 5).toFixed(2));
+    			data4.push((Math.random() + 0.3).toFixed(2));
+			}
+
+			var itemStyle = {
+    			normal: {
+    			},
+    			emphasis: {
+        			barBorderWidth: 1,
+        			shadowBlur: 10,
+        			shadowOffsetX: 0,
+        			shadowOffsetY: 0,
+        			shadowColor: 'rgba(0,0,0,0.5)'
+    			}
+			};
+
+			option = {
+    			backgroundColor: '#ffffff',
+    			legend: {
+        			data: ['bar', 'bar2', 'bar3', 'bar4'],
+        			align: 'left',
+        			left: 10
+    			},
+    		brush: {
+        		toolbox: ['rect', 'polygon', 'lineX', 'lineY', 'keep', 'clear'],
+        		xAxisIndex: 0
+    		},
+    		toolbox: {
+        		feature: {
+            		magicType: {
+                		type: ['stack', 'tiled']
+            		},
+            		dataView: {}
+        		}
+    		},
+    		tooltip: {},
+    		xAxis: {
+        		data: xAxisData,
+        		name: 'X Axis',
+        		silent: false,
+        		axisLine: {onZero: true},
+        		splitLine: {show: false},
+        		splitArea: {show: false}
+    		},
+    		yAxis: {
+        		inverse: true,
+        		splitArea: {show: false}
+    		},
+    		grid: {
+        		left: 100
+    		},
+    		visualMap: {
+        		type: 'continuous',
+        		dimension: 1,
+        		text: ['High', 'Low'],
+        		inverse: true,
+        		itemHeight: 200,
+        		calculable: true,
+        		min: -2,
+        		max: 6,
+        		top: 60,
+        		left: 10,
+        		inRange: {
+            		colorLightness: [0.4, 0.8]
+        		},
+        		outOfRange: {
+            		color: '#bbb'
+        		},
+        		controller: {
+            		inRange: {
+                	color: '#2f4554'
+            		}
+        		}
+    		},
+    		series: [
+        	{
+            	name: 'bar',
+            	type: 'bar',
+            	stack: 'one',
+            	itemStyle: itemStyle,
+            	data: data1
+        	},
+        	{
+            	name: 'bar2',
+            	type: 'bar',
+            	stack: 'one',
+            	itemStyle: itemStyle,
+            	data: data2
+        	},
+        	{
+            	name: 'bar3',
+            	type: 'bar',
+            	stack: 'one',
+            	itemStyle: itemStyle,
+            	data: data3
+        	},
+        	{
+            	name: 'bar4',
+            	type: 'bar',
+            	stack: 'one',
+            	itemStyle: itemStyle,
+            	data: data4
+        	}
+    		]
+		};
+		myChart.setOption(option)
+
+        	
+        </script>
+
+	</body>
+</html>

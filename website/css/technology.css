@@ -1,0 +1,19 @@
+.right-button {
+	position: absolute;
+	width:80px;
+	height:100px;
+	top:200px;
+	right:20px;
+}
+.left-button {
+	position: absolute;
+	width:80px;
+	height:100px;
+	top:200px;
+	left:20px;
+}
+.word-cloud {
+	width: 70%;
+	margin-top:60px;
+
+}
