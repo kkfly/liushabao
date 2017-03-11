@@ -37,6 +37,17 @@ $(function(){
 	var $marker = $('.marker')
 
 	$marker.mouseover(function(event) {
+		$.ajax({
+			url: 'http://127.0.0.1:5000/getwiki',
+			type: 'POST',
+			dataType: 'json',
+			data: JSON.stringify({keywords: $(this).text()}),
+			contentType: 'application/json'
+		})
+		.done(function(response) {
+			console.log(response);
+		})
+
 		$(this).tooltip('show')
 	});
 
