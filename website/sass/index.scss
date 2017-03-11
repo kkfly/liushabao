@@ -58,6 +58,16 @@
 	-webkit-filter: grayscale(100%);
 }
 
+.news-title {
+	text-overflow: ellipsis;
+	font-size: 20px;
+	width: 100%;
+	overflow:hidden;
+	display:-webkit-box; 
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2; 
+}
+
 #news {
 	margin-top: 100px;
 	margin-left: 110px;

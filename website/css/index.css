@@ -64,21 +64,32 @@
 }
 
 /* line 61, ../sass/index.scss */
+.news-title {
+  text-overflow: ellipsis;
+  font-size: 20px;
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* line 71, ../sass/index.scss */
 #news {
   margin-top: 100px;
   margin-left: 110px;
   height: 100%;
   line-height: 1;
 }
-/* line 66, ../sass/index.scss */
+/* line 76, ../sass/index.scss */
 #news .first {
   float: left;
 }
-/* line 70, ../sass/index.scss */
+/* line 80, ../sass/index.scss */
 #news .second {
   float: left;
 }
-/* line 73, ../sass/index.scss */
+/* line 83, ../sass/index.scss */
 #news .third {
   float: left;
 }
