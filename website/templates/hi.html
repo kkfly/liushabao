@@ -1,0 +1,12 @@
+<!doctype html>
+<title>Hello from Flask</title>
+{% if user %}
+  <h1>Hello {{ user.username }}!</h1>
+  <h1>Hello {{ user.role_id }}!</h1>
+  <h1>Hello {{ user[0].username}}!</h1>
+  <h1>Hello {{ user[0].role_id}}!</h1>
+  <img src="/static/img/标注.png"/>
+{% else %}
+  <h1>Hello World!</h1>
+  <img src="/static/img/标注.png"/>
+{% endif %}
