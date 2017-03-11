@@ -43,3 +43,37 @@
   line-height: 400px;
   font-size: 50px;
 }
+
+/* line 45, ../sass/index.scss */
+.news-icon-wrapper {
+  width: 280px;
+  height: 320px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+/* line 52, ../sass/index.scss */
+.news-icon {
+  width: 280px;
+  height: 220px;
+}
+
+/* line 57, ../sass/index.scss */
+#news {
+  margin-top: 100px;
+  margin-left: 120px;
+  height: 100%;
+  line-height: 1;
+}
+/* line 62, ../sass/index.scss */
+#news .first {
+  float: left;
+}
+/* line 66, ../sass/index.scss */
+#news .second {
+  float: left;
+}
+/* line 69, ../sass/index.scss */
+#news .third {
+  float: left;
+}

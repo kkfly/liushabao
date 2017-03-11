@@ -42,5 +42,34 @@
 	font-size: 50px;
 }
 
+.news-icon-wrapper {
+	width: 280px;
+	height: 320px;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+
+.news-icon {
+	width: 280px;
+	height: 220px;
+}
+
+#news {
+	margin-top: 100px;
+	margin-left: 120px;
+	height: 100%;
+	line-height: 1;
+	.first {
+		float: left;
+	}
+
+	.second {
+		float: left;
+	}
+	.third {
+		float: left;
+	}
+}
+
 
 

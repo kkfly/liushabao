@@ -5,6 +5,7 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/handlebars.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/index.css"></link>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
 </head>
@@ -19,12 +20,18 @@
 	<div id="welcome">
 		<div id="welcome-message">Hacker News</div>
 	</div>
-	<div id="news"><div>
+	<div id="news"></div>
 	<script type="text/x-handlebars-template" id="news-icon-template">
-		<div class="news-icon-wrapper">
-			<div class="news-icon"></div>
-			<div class="news-title"></div>
+	{{#each news}}
+		<div class="news-icon-wrapper {{position}}">
+			<div>
+				<img class="news-icon" src="{{imageURL}}" alt="News"/>
+			</div>
+			<div class="news-title">
+				{{title}}
+			</div>
 		</div>
+	{{/each}}
 	</script>
 </body>
 </html>
