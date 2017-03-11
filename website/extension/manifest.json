@@ -9,8 +9,8 @@
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["jquery.js", "display.js"],
-      "css": ["display.css"]
+      "js": ["jquery.js", "bootstrap.min.js", "display.js"],
+      "css": ["bootstrap.min.css", "display.css"]
     }
   ],
   "browser_action": {

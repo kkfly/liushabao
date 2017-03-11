@@ -10,7 +10,7 @@ $(function(){
 		var update = false
 		$.each(words, function(i, word) {
 			if ($.inArray(word, allis) != -1) {
-				word = '<span class=\"marker\">' + word + '</span>'
+				word = '<span data-toggle=\"tooltip\" data-placement=\"right\" class=\"marker\" title=\"test\">' + word + '</span>'
 				console.log("here")
 				update = true
 			}
@@ -32,6 +32,16 @@ $(function(){
 
 	$.each($bodyEl.children(), function() {
 		visit($(this))
+	})
+
+	var $marker = $('.marker')
+
+	$marker.mouseover(function(event) {
+		$(this).tooltip('show')
+	});
+
+	$marker.mouseout(function(event) {
+		$(this).tooltip('hide')
 	})
 
 	alert("load")

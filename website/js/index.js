@@ -1,5 +1,7 @@
 $(function() {
 
+	$('[data-toggle="tooltip"]').tooltip()
+
 	function inflateNews(data) {
 		var $newsDiv = $('#news')
 		var newsTpl = Handlebars.compile($('#news-icon-template').html())
@@ -61,6 +63,4 @@ $(function() {
 	}
 
 	inflateNews(data)
-
-	console.log($('body').text())
 });
