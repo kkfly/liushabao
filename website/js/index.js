@@ -61,4 +61,6 @@ $(function() {
 	}
 
 	inflateNews(data)
+
+	console.log($('body').text())
 });
