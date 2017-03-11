@@ -20,6 +20,14 @@ $(function() {
 				data
 			)
 		)
+
+		$('.news-icon').mouseover(function(item){
+			$(this).removeClass('gray')
+		})
+
+		$('.news-icon').mouseout(function(){
+			$(this).addClass('gray')
+		})
 	}
 
 	var data = {
