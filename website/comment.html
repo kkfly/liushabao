@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hacker News</title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/handlebars.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/comment.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/comment.css"></link>
+</head>
+<body>
+	<div id="comment-main">
+		
+	</div>
+	<script type="text/x-handlebars-template" id="comment-template">
+	{{#each comments}}
+		<div class="comment-wrapper-tpl">
+			<div class="comment-user-tpl">
+				{{username}}
+			</div>
+			<div class="comment-tpl">
+				{{comment}}
+			</div>
+		</div>
+	{{/each}}
+	</script>
+</body>
+</html>

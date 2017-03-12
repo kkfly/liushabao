@@ -1,0 +1,40 @@
+/* line 1, ../sass/news.scss */
+#news {
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+/* line 6, ../sass/news.scss */
+#news-title {
+  background-color: #535559;
+  color: #fff;
+  font-size: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* line 16, ../sass/news.scss */
+#news-inner {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+/* line 22, ../sass/news.scss */
+#news-author {
+  float: left;
+  color: #777B88;
+}
+
+/* line 27, ../sass/news.scss */
+#news-time {
+  margin-left: 100px;
+  color: #777B88;
+}
+
+/* line 32, ../sass/news.scss */
+#news-content {
+  margin-top: 20px;
+}
