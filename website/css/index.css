@@ -63,3 +63,31 @@
 #news .third {
   float: left;
 }
+
+/* line 61, ../sass/index.scss */
+.comment-wrapper {
+  position: fixed;
+  bottom: 0px;
+}
+
+/* line 66, ../sass/index.scss */
+.comment-box {
+  width: 450px;
+}
+
+/* line 70, ../sass/index.scss */
+.fade.in.half-opt {
+  opacity: 0.7;
+}
+
+/* line 74, ../sass/index.scss */
+.fade.in.near-opt {
+  opacity: 0.2;
+}
+
+/* line 78, ../sass/index.scss */
+.alert-success {
+  color: #fff;
+  background-color: #73777F;
+  border-color: #73777F;
+}

@@ -69,7 +69,5 @@ $(function(){
 			window.open(url, "_blank");
 		}
 	});
-
-	alert("load")
 })
 

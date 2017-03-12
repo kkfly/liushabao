@@ -13,3 +13,7 @@
 .marker-active {
 	text-decoration:underline;
 }
+
+.comment-wrapper {
+	color: green;
+}
