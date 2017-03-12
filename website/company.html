@@ -51,7 +51,7 @@
 		<script type="text/javascript">
         	var myChart = echarts.init(document.getElementById('main-company'));
         	myChart.showLoading();
-			$.get('/others/les-miserables.gexf', function (xml) {
+			$.get('/others/les-miserables-com.gexf', function (xml) {
     			myChart.hideLoading();
 
     			var graph = echarts.dataTool.gexf.parse(xml);
@@ -67,7 +67,7 @@
         		node.symbolSize /= 1.5;
         		node.label = {
             	normal: {
-                	show: node.symbolSize > 20
+                	show: true,
             	}
         	};
         	node.category = node.attributes.modularity_class;

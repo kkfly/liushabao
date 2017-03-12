@@ -27,36 +27,35 @@
     <script type="text/javascript">
         var myChart = echarts.init(document.getElementById('main'));
     	myChart.showLoading();
-		$.get('others/les-miserables.gexf', function (xml) {
-    	myChart.hideLoading();
-
+		$.get('others/les-miserables-user.gexf').done(function (xml) {
+    	console.log("hahahah")
+        myChart.hideLoading();
+        
     	var graph = echarts.dataTool.gexf.parse(xml);
+        console.log(xml)
     	var categories = [];
     	for (var i = 0; i < 9; i++) {
         	categories[i] = {
             name: '类目' + i
         };
     	}
+        console.log(graph)
     	graph.nodes.forEach(function (node) {
             node.itemStyle = null;
-            node.symbolSize = node.symbolSize/3;
+            node.symbolSize = node.symbolSize;
             node.value = node.symbolSize;
             node.category = node.attributes.modularity_class;
+            console.log( node.category)
             // Use random x, y
             node.x = node.y = null;
             node.draggable = true;
-            node.label = {
-            normal: {
-                show: node.symbolSize > 10
-            }
-        };
         });
     	option = {
         title: {
-            text: 'Network of Yours',
+            text: 'Les Miserables',
             subtext: 'Default layout',
             top: 'bottom',
-            left: 'right',
+            left: 'right'
         },
         tooltip: {},
         legend: [{
@@ -78,17 +77,18 @@
                 roam: true,
                 label: {
                     normal: {
+                        show:true,
                         position: 'right'
                     }
                 },
                 force: {
-                    repulsion: 290
+                    repulsion: 849
                 }
             }
         ]
     };
 
     	myChart.setOption(option);
-}, 'xml');
+})//, 'xml');
     </script>
 </body>

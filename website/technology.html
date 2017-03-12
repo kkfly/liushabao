@@ -22,16 +22,6 @@
 		<link rel="stylesheet" type="text/css" href="css/technology.css"></link>
 		<script>
 			$(document).ready(function(){
-  			$("#2016").click(function(){
-  				$("#word-cloud-2016").fadeOut("slow");
-  				$("#word-cloud-2015").fadeOut("slow");
-  				$("#word-cloud-2014").fadeOut("slow");
-  				$("#word-cloud-2013").fadeOut("slow");
-  				$("#word-cloud-2012").fadeOut("slow");
-  				$("#word-cloud-2011").fadeOut("slow");
-    			$("#word-cloud-2016").fadeIn("slow");
-    			console.log("hahahah")
-  			});
   			$("#2015").click(function(){
   				$("#word-cloud-2016").fadeOut("slow");
   				$("#word-cloud-2015").fadeOut("slow");
@@ -104,10 +94,9 @@
 				<div class="btn-group" >
 
   					<button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    				2016 <span class="caret"></span>
+    				2015 <span class="caret"></span>
   					</button>
   					<ul class="dropdown-menu">
-  						<li id="2016">2016</li>
     					<li id="2015">2015</li>
     					<li id="2014">2014</li>
     					<li id="2013">2013</li>
@@ -139,18 +128,19 @@
         <script type="text/javascript">
         	var myChart = echarts.init(document.getElementById('main-technology'));
         	var xAxisData = [];
-			var data1 = [];
-			var data2 = [];
-			var data3 = [];
-			var data4 = [];
-
-			for (var i = 0; i < 10; i++) {
-    			xAxisData.push('Class' + i);
-    			data1.push((Math.random() * 2).toFixed(2));
-    			data2.push(-Math.random().toFixed(2));
-    			data3.push((Math.random() * 5).toFixed(2));
-    			data4.push((Math.random() + 0.3).toFixed(2));
-			}
+			var data1 = [1,0,0,1,0];
+			var data2 = [1,0,0,0,0];
+			var data3 = [1,0,0,0,0];
+			var data4 = [0,1,0,0,0];
+      var data5 = [0,1,0,1,0];
+      var data6 = [0,1,0,0,0];
+      var data7 = [0,0,1,0,0];
+      var data8 = [0,0,1,0,0];
+      var data9 = [0,0,1,0,0];
+      var data10 = [0,0,0,1,0];
+      var data11 = [0,0,0,0,1];
+      var data12 = [0,0,0,0,1];
+      var data13 = [0,0,0,0,1];
 
 			var itemStyle = {
     			normal: {
@@ -167,7 +157,7 @@
 			option = {
     			backgroundColor: '#ffffff',
     			legend: {
-        			data: ['bar', 'bar2', 'bar3', 'bar4'],
+        			data: ['2015 Internet of Things (IoT)', 'automation', 'machine learning', '3D printing','Big Data','Wearable Use Interfaces','2015 Internet of Things (IoT)','Biochips','Social Analytics','Wireless Power','NFC','3D printing','Media Tablet'],
         			align: 'left',
         			left: 10
     			},
@@ -224,33 +214,96 @@
     		},
     		series: [
         	{
-            	name: 'bar',
+            	name: '2015 Internet of Things (IoT)',
             	type: 'bar',
             	stack: 'one',
             	itemStyle: itemStyle,
             	data: data1
         	},
         	{
-            	name: 'bar2',
+            	name: 'automation',
             	type: 'bar',
             	stack: 'one',
             	itemStyle: itemStyle,
             	data: data2
         	},
         	{
-            	name: 'bar3',
+            	name: 'machine learning',
             	type: 'bar',
             	stack: 'one',
             	itemStyle: itemStyle,
             	data: data3
         	},
         	{
-            	name: 'bar4',
+            	name: '3D printing',
             	type: 'bar',
             	stack: 'one',
             	itemStyle: itemStyle,
             	data: data4
-        	}
+        	},
+          {
+              name: 'Big Data',
+              type: 'bar',
+              stack: 'one',
+              itemStyle: itemStyle,
+              data: data5
+          },
+          {
+              name: 'Wearable Use Interfaces',
+              type: 'bar',
+              stack: 'one',
+              itemStyle: itemStyle,
+              data: data6
+          },
+          {
+              name: '2015 Internet of Things (IoT)',
+              type: 'bar',
+              stack: 'one',
+              itemStyle: itemStyle,
+              data: data7
+          },
+          {
+              name: 'Biochips',
+              type: 'bar',
+              stack: 'one',
+              itemStyle: itemStyle,
+              data: data8
+          },
+          {
+              name: 'Social Analytics',
+              type: 'bar',
+              stack: 'one',
+              itemStyle: itemStyle,
+              data: data9
+          },
+          {
+              name: 'Wireless Power',
+              type: 'bar',
+              stack: 'one',
+              itemStyle: itemStyle,
+              data: data10
+          },
+          {
+              name: 'NFC',
+              type: 'bar',
+              stack: 'one',
+              itemStyle: itemStyle,
+              data: data11
+          },
+          {
+              name: '3D printing',
+              type: 'bar',
+              stack: 'one',
+              itemStyle: itemStyle,
+              data: data12
+          },
+          {
+              name: 'Media Tablet',
+              type: 'bar',
+              stack: 'one',
+              itemStyle: itemStyle,
+              data: data13
+          },
     		]
 		};
 		myChart.setOption(option)
