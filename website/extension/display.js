@@ -1,23 +1,30 @@
 $(function(){
 	var $bodyEl = $('body')
 
-	var allis = ["Kindle", "Google", "is", "are", 'example', 'applications', 'Python', 'download', 'summer']
-
 	function addMarker(el) {
 		var elText = el.text()
 		var words = elText.split(' ')
 		var result = ''
 		var update = false
 		$.each(words, function(i, word) {
-			if ($.inArray(word, allis) != -1) {
-				word = '<span data-toggle=\"tooltip\" data-placement=\"right\" class=\"marker\">' + word + '</span>'
-				console.log("here")
+			var lw = word.toLowerCase()
+			var w = wikiData[lw]
+			if (w != undefined) {
+				// var att = ' url=\"' + w.url + '\" title=\"' + w.summary + '\"'
+				word = '<span data-toggle=\"tooltip\" data-placement=\"right\" class=\"marker\" data=\"' + lw + '\">' + word + '</span>'
 				update = true
 			}
 			result += word + ' '
 		})
 		if (update) console.log(result)
 		el.html(result)
+		$.each(el.children('span'), function(){
+			var w = wikiData[$(this).attr('data')]
+			$(this).attr({
+				'url': w.url,
+				'data-original-title': w.summary,
+			});
+		})
 	}
 
 	function visit(el) {
@@ -34,41 +41,43 @@ $(function(){
 		visit($(this))
 	})
 
-	var $marker = $('.marker')
+	$('[data-toggle="tooltip"]').tooltip()
 
-	$marker.mouseover(function(event) {
-		$(this).addClass('marker-active')
-		var el = $(this)
-		$.ajax({
-			url: 'http://127.0.0.1:5000/getwiki',
-			type: 'POST',
-			dataType: 'json',
-			data: JSON.stringify({keywords: $(this).text()}),
-			contentType: 'application/json'
-		})
-		.done(function(response) {
-			console.log(response);
-			if (response.success) {
-				el.attr({
-					'data-original-title': response.result,
-					'url': response.url
-				});
-				el.tooltip('show')
-			}
-		})
-	});
+	// var $marker = $('.marker')
 
-	$marker.mouseout(function(event) {
-		$(this).tooltip('hide')
-		$(this).removeClass('marker-active')
-	})
+	// $marker.mouseover(function(event) {
+	// 	$(this).addClass('marker-active')
+	// 	var el = $(this)
+	// 	$.ajax({
+	// 		url: 'http://127.0.0.1:5000/getwiki',
+	// 		type: 'POST',
+	// 		dataType: 'json',
+	// 		data: JSON.stringify({keywords: $(this).text()}),
+	// 		contentType: 'application/json'
+	// 	})
+	// 	.done(function(response) {
+	// 		console.log(response);
+	// 		if (response.success) {
+	// 			el.attr({
+	// 				'data-original-title': response.result,
+	// 				'url': response.url
+	// 			});
+	// 			el.tooltip('show')
+	// 		}
+	// 	})
+	// });
 
-	$marker.click(function(event) {
-		var url = $(this).attr('url')
-		if (url != undefined) {
-			window.open(url, "_blank");
-		}
-	});
+	// $marker.mouseout(function(event) {
+	// 	$(this).tooltip('hide')
+	// 	$(this).removeClass('marker-active')
+	// })
+
+	// $marker.click(function(event) {
+	// 	var url = $(this).attr('url')
+	// 	if (url != undefined) {
+	// 		window.open(url, "_blank");
+	// 	}
+	// });
 
 	function createCommentTpl(name, comment) {
 		var $wrapper = $('<div/>')
