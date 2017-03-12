@@ -6,6 +6,27 @@ $(function(){
 		var words = elText.split(' ')
 		var result = ''
 		var update = false
+		// for(var i = 0; i < words.length; i++) {
+		// 	var lw = words[i].toLowerCase()
+		// 	var w = wikiData[lw]
+		// 	if (w != undefined) {
+		// 		// var att = ' url=\"' + w.url + '\" title=\"' + w.summary + '\"'
+		// 		words[i] = '<span data-toggle=\"tooltip\" data-placement=\"right\" class=\"marker\" data=\"' + lw + '\">' + words[i] + '</span>'
+		// 		update = true
+		// 		console.log(w)
+		// 	} else {
+		// 		if (i + 1 < words.length) {
+		// 			lw = lw + ' ' + words[i + 1].toLowerCase()
+		// 			w = wikiData[lw]
+		// 			if (w != undefined) {
+		// 				words[i] = '<span data-toggle=\"tooltip\" data-placement=\"right\" class=\"marker\" data=\"' + lw + '\">' + words[i] + ' ' +  words[i + 1] + '</span>'
+		// 				update = true
+		// 				i++
+		// 			} 
+		// 		}
+		// 	}
+		// 	result += words[i] + ' '
+		// }
 		$.each(words, function(i, word) {
 			var lw = word.toLowerCase()
 			var w = wikiData[lw]
@@ -43,7 +64,7 @@ $(function(){
 
 	$('[data-toggle="tooltip"]').tooltip()
 
-	// var $marker = $('.marker')
+	var $marker = $('.marker')
 
 	// $marker.mouseover(function(event) {
 	// 	$(this).addClass('marker-active')
@@ -72,12 +93,12 @@ $(function(){
 	// 	$(this).removeClass('marker-active')
 	// })
 
-	// $marker.click(function(event) {
-	// 	var url = $(this).attr('url')
-	// 	if (url != undefined) {
-	// 		window.open(url, "_blank");
-	// 	}
-	// });
+	$marker.click(function(event) {
+		var url = $(this).attr('url')
+		if (url != undefined) {
+			window.open(url, "_blank");
+		}
+	});
 
 	function createCommentTpl(name, comment) {
 		var $wrapper = $('<div/>')
@@ -151,7 +172,7 @@ $(function(){
 				ppp.alert('close')
 			}
 			if (i < data.length) {
-				var c = createCommentTpl(data[i].username, data[i].comment)
+				var c = createCommentTpl(data[i].by, data[i].text)
 				c.appendTo(el)
 				if (pp != undefined) {
 					pp.removeClass('half-opt')
@@ -177,30 +198,7 @@ $(function(){
 		// })
 	}
 
-	var commentData = [
-		{
-			'username': 'Ran Wang',
-			'comment': 'I\'m very tired. I\'m very tired. I\'m very tired. I\'m very tired. I\'m very tired. I\'m very tired.'
-		},
-		{
-			'username': 'Ran Wang',
-			'comment': 'lalalalalalalalalalal alalalalalalalala lalalalalalalal alalalalalalalalalal alalalalalalal alalalalal lalalalalalalalala lalalalalalalalalalal alalalalalalalalalalalalal alalalalalalalalalalala lalalalalalalalalalal alalalalalalalala'
-		},
-		{
-			'username': 'Ran Wang',
-			'comment': 'outerWidth()'
-		},
-		{
-			'username': 'Ran Wang',
-			'comment': 'I\'m very tired!!!'
-		},
-		{
-			'username': 'Ran Wang',
-			'comment': 'I\'m very tired!!!'
-		}
-	]
-
-	$(function(){
+    function renderComment(commentData) {
 		var $commentDiv = $('<div/>')
 		$commentDiv.addClass('comment-wrapper')
 		$commentDiv.appendTo($('body'))
@@ -210,7 +208,37 @@ $(function(){
 		$header.appendTo($belowDiv)
 		$upperDiv.appendTo($commentDiv)
 		$belowDiv.appendTo($commentDiv)
+		$('#viewAllComment').click(function(event) {
+			window.open('/comment.html')
+		});
 		inflateComment($upperDiv, commentData, 0)
-	})
+    }
+
+
+	renderComment(commentData.comments)
+		// if (url.contains('/news.html?id=')) {
+		// 	var news_id = getUrlParam('id')
+		// 	$.ajax({
+		// 		url: '/getcommentsbyid',
+		// 		type: 'POST',
+		// 		dataType: 'json',
+		// 		data: JSON.stringify({id: news_id}),
+		// 		contentType: 'application/json'
+		// 	})
+		// 	.done(function(response) {
+		// 		if (response.success) renderComment(news_id, response.comments)
+		// 	})
+		// } else {
+		// 	$.ajax({
+		// 		url: '/getcommentsbyurl',
+		// 		type: 'POST',
+		// 		dataType: 'json',
+		// 		data: JSON.stringify({'url': url}),
+		// 		contentType: 'application/json'
+		// 	})
+		// 	.done(function(response) {
+		// 		if (response.success) renderComment(response.id, response.comments)
+		// 	})
+		// }
 })
 

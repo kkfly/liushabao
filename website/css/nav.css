@@ -29,3 +29,49 @@
   background-color: #F6F6F6;
   border-radius: 5px;
 }
+
+/* line 30, ../sass/nav.scss */
+.fade.in {
+  opacity: 0.9;
+}
+
+/* line 34, ../sass/nav.scss */
+.fade.in.half-opt {
+  opacity: 0.6;
+}
+
+/* line 38, ../sass/nav.scss */
+.fade.in.near-opt {
+  opacity: 0.2;
+}
+
+/* line 42, ../sass/nav.scss */
+.alert-success {
+  color: #fff;
+  background-color: #73777F;
+  border-color: #73777F;
+}
+
+/* line 48, ../sass/nav.scss */
+.alert-warning {
+  background-color: #505359;
+  border-color: #505359;
+  color: #505359;
+}
+
+/* line 54, ../sass/nav.scss */
+.comment-user {
+  margin-right: 10px;
+}
+
+/* line 58, ../sass/nav.scss */
+#viewAllComment {
+  width: 80%;
+  background-color: #505359;
+  color: #fff;
+}
+
+/* line 64, ../sass/nav.scss */
+.close-but {
+  color: #fff;
+}

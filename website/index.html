@@ -6,6 +6,8 @@
 	<script type="text/javascript" src="js/handlebars.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/nav.js"></script>
+	<script type="text/javascript" src="js/homenews.js"></script>
+	<script type="text/javascript" src="js/image.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
 	<link rel="stylesheet" type="text/css" href="css/nav.css"></link>
@@ -26,9 +28,9 @@
 	<div id="news"></div>
 	<script type="text/x-handlebars-template" id="news-icon-template">
 	{{#each news}}
-		<div class="news-icon-wrapper {{position}}">
+		<div class="news-icon-wrapper {{position}}" type="{{type}}" url="{{url}}" id="{{id}}">
 			<div>
-				<img class="news-icon gray" src="{{imageURL}}" alt="News"/>
+				<img class="news-icon gray" src="{{image_url}}" alt="News"/>
 			</div>
 			<div class="news-title">
 				{{title}}

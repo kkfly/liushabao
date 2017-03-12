@@ -20,3 +20,49 @@
   font-weight: bold;
   color: #6C707A;
 }
+
+/* line 24, ../sass/comment.scss */
+.fade.in {
+  opacity: 0.9;
+}
+
+/* line 28, ../sass/comment.scss */
+.fade.in.half-opt {
+  opacity: 0.6;
+}
+
+/* line 32, ../sass/comment.scss */
+.fade.in.near-opt {
+  opacity: 0.2;
+}
+
+/* line 36, ../sass/comment.scss */
+.alert-success {
+  color: #fff;
+  background-color: #73777F;
+  border-color: #73777F;
+}
+
+/* line 42, ../sass/comment.scss */
+.alert-warning {
+  background-color: #505359;
+  border-color: #505359;
+  color: #505359;
+}
+
+/* line 48, ../sass/comment.scss */
+.comment-user {
+  margin-right: 10px;
+}
+
+/* line 52, ../sass/comment.scss */
+#viewAllComment {
+  width: 80%;
+  background-color: #505359;
+  color: #fff;
+}
+
+/* line 58, ../sass/comment.scss */
+.close-but {
+  color: #fff;
+}

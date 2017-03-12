@@ -9,7 +9,7 @@
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["jquery.js", "bootstrap.min.js", "wiki.js", "display.js"],
+      "js": ["jquery.js", "bootstrap.min.js", "wiki.js", "allcomments.js", "display.js"],
       "css": ["bootstrap.min.css", "display.css"]
     }
   ],

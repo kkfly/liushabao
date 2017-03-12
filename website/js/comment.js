@@ -1,5 +1,11 @@
 $(function(){
 
+	function getUrlParam(name) {  
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");  
+        var r = window.location.search.substr(1).match(reg);  
+        if (r!=null) return unescape(r[2]); return null;  
+    }
+
 	function inflateComment(data) {
 		var $main = $('#comment-main')
 		var commentTpl = Handlebars.compile($('#comment-template').html())
@@ -34,6 +40,6 @@ $(function(){
 			'comment': 'I\'m very tired!!!'
 		}
 	]}
-
+	
 	inflateComment(commentData)
 })

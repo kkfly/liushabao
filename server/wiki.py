@@ -11,7 +11,7 @@ def getWiki(keyword):
 	except Exception, e:
 		print('do noting')
 
-input_file = open('/Users/lillian/hackathon/data/res/xaa.txt', 'r')
+input_file = open('/Users/lillian/hackathon/data/res/xaa', 'r')
 for line in input_file:
 	print(line)
 	getWiki(line)
